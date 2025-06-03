@@ -124,6 +124,23 @@ jQuery(function ($) {
 		}
 		backToTop();
 
+		// animated scroll
+		function animatedScroll() {
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					const target = document.querySelector(this.getAttribute('href'));
+
+					if (target) {
+						e.preventDefault();
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
+		}
+		animatedScroll();
 
 		// banner-carousel
 		function bannerCarouselOne() {
@@ -225,26 +242,26 @@ jQuery(function ($) {
 				prevArrow: '<button type="button" class="carousel-control left" aria-label="carousel-control"><i class="fas fa-chevron-left"></i></button>',
 				nextArrow: '<button type="button" class="carousel-control right" aria-label="carousel-control"><i class="fas fa-chevron-right"></i></button>',
 				responsive: [{
-						breakpoint: 992,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 3
-						}
-					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 2
-						}
-					},
-					{
-						breakpoint: 481,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1
-						}
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3
 					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				},
+				{
+					breakpoint: 481,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
 				]
 			});
 		}

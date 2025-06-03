@@ -1247,12 +1247,12 @@ ul.navbar-nav>li.header-get-a-quote:hover>a:after {
 7.   Content area
 8.   Testimonial
 9.   Subscribe area
-10.   News section
+10.   Repositorios section
 11.   Footer
 12.   Sub Pages
 13.   Contact Us
-14.   News Listing
-15.   News Single
+14.   Repositorios Listing
+15.   Repositorios Single
 16.   Sidebar
 17.   Error page
 */
@@ -1691,8 +1691,8 @@ ul.navbar-nav>li.header-get-a-quote:hover>a:after {
   margin-bottom: 20px;
 }
 
-/* News and projects */
-#news.news {
+/* Repositorios and projects */
+#repositorios.repositorios {
   background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
   padding: 60px 0;
   border-radius: 12px;
@@ -1722,9 +1722,19 @@ ul.navbar-nav>li.header-get-a-quote:hover>a:after {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.projetos-row>div {
-  flex: 0 0 33.3333%;
+/* Remove o comportamento fixo no mobile */
+.projetos-row > div {
   display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+
+/* A partir de tablets (≥768px) */
+@media (min-width: 768px) {
+  .projetos-row > div {
+    flex: 0 0 33.3333%;
+    display: flex;
+  }
 }
 
 .projetos-row .latest-post {
@@ -2451,14 +2461,14 @@ img.testimonial-thumb {
   top: 0;
 }
 
-.newsletter-form input {
+.repositoriosletter-form input {
   background: none;
   font-size: 12px;
   height: 45px;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* News section
+/* Repositorios section
 ================================================== */
 .latest-post {
   position: relative;
@@ -3065,7 +3075,7 @@ label {
   margin: 0;
 }
 
-/* News Listing
+/* Repositorios Listing
 ================================================== */
 .post {
   border-bottom: 1px solid #dadada;
@@ -3161,7 +3171,7 @@ label {
   border: 1px solid transparent;
 }
 
-/* News Single
+/* Repositorios Single
 ================================================== */
 .tags-area {
   margin: 20px 0;
@@ -3466,7 +3476,7 @@ label {
   cursor: pointer;
 }
 
-/* Recent News */
+/* Recent Repositorios */
 .widget.recent-posts .widget-title {
   margin-bottom: 35px;
 }
