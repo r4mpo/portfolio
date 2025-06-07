@@ -3153,7 +3153,7 @@ img.testimonial-thumb {
 }
 
 /* Cards da Formação */
-.education-card {
+.education-and-xp-card {
   background: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
@@ -3166,49 +3166,49 @@ img.testimonial-thumb {
   justify-content: flex-start;
 }
 
-.education-card:hover {
+.education-and-xp-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* Ícones */
-.education-icon {
+.education-and-xp-icon {
   text-align: center;
   margin-bottom: 16px;
 }
 
-.education-icon svg {
+.education-and-xp-icon svg {
   width: 60px;
   height: 60px;
 }
 
 /* Títulos */
-.education-title {
+.education-and-xp-title {
   font-size: 1.1rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 6px;
 }
 
-.education-subtitle {
+.education-and-xp-subtitle {
   font-size: 0.9rem;
   color: #777;
   margin-bottom: 10px;
 }
 
 /* Descrição */
-.education-body p {
+.education-and-xp-body p {
   font-size: 0.9rem;
   color: #555;
 }
 
-.education-body a {
+.education-and-xp-body a {
   color: #007bff;
   text-decoration: none;
   font-weight: 500;
 }
 
-.education-body a:hover {
+.education-and-xp-body a:hover {
   color: #0056b3;
 }
 
