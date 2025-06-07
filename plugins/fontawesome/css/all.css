@@ -2010,10 +2010,10 @@ readers do not read off random characters that represent icons */
 .fa-h-square:before {
   content: "\f0fd"; }
 
-.fa-hacker-repositorios:before {
+.fa-hacker-repositories:before {
   content: "\f1d4"; }
 
-.fa-hacker-repositorios-square:before {
+.fa-hacker-repositories-square:before {
   content: "\f3af"; }
 
 .fa-hackerrank:before {
