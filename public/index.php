@@ -81,9 +81,3 @@ $errorMiddleware->setDefaultErrorHandler($errorHandler);
 $response = $app->handle($request);
 $responseEmitter = new ResponseEmitter();
 $responseEmitter->emit($response);
-
-$container = $app->getContainer();
-
-$container->set('view', function () {
-    return new PhpRenderer(__DIR__ . '/../views');
-});

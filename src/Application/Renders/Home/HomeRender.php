@@ -20,7 +20,9 @@ class HomeRender
     public function __invoke(Request $request, Response $response, array $args): Response
     {
         $lang = require __DIR__ . '/../../Langs/pt-br/HomeLangs.php';
+$this->view->setTemplatePath('views');
 
+var_dump($this->view->getTemplatePath());exit;
         return $this->view->render($response, 'home.php', [
             'title' => 'Home',
             'lang' => $lang
