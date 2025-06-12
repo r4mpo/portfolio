@@ -24,7 +24,7 @@ return [
      * Seção: Banner (Slides da Home)
      * ---------------------------------------------------------------
      */
-    'banner' => [
+    'banners' => [
         [
             'background' => 'images/slider-main/bg1.jpg',
             'content' => '

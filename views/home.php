@@ -82,66 +82,19 @@
         </header>
 
         <div class="banner-carousel banner-carousel-1 mb-0">
-            <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
-                <div class="slider-content">
-                    <div class="container h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col-md-12 text-center">
-                                <h2 class="slide-title" data-animation-in="slideInLeft">ERICK AGOSTINHO</h2>
-                                <h3 class="slide-sub-title" data-animation-in="slideInRight">DESENVOLVEDOR FULL
-                                    STACK</h3>
-                                <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                                    <a href="#repositories" class="slider btn btn-primary">Meus Projetos</a>
-                                    <a href="#" class="slider btn btn-primary border">Fale Comigo</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg2.jpg)">
-                <div class="slider-content text-left">
-                    <div class="container h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col-md-12">
-                                <h2 class="slide-title-box" data-animation-in="slideInDown">EXPERIÊNCIA REAL</h2>
-                                <h3 class="slide-title" data-animation-in="fadeIn">Projetos robustos e escaláveis
-                                </h3>
-                                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Back-End | Front-End | IoT |
-                                    API |
-                                    DevOps</h3>
-                                <p data-animation-in="slideInRight">
-                                    <a href="#" class="slider btn btn-primary border">Ver Experiência</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg3.jpg)">
-                <div class="slider-content text-left">
-                    <div class="container h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col-md-12">
-                                <h2 class="slide-title" data-animation-in="slideInDown">CONSTRUO SOLUÇÕES COMPLETAS
-                                </h2>
-                                <h3 class="slide-sub-title" data-animation-in="fadeIn">Do Front ao Back-End</h3>
-                                <p class="slider-description lead" data-animation-in="slideInRight">API | Laravel |
-                                    Vue.js | Docker |
-                                    CI/CD | Banco de Dados</p>
-                                <div data-animation-in="slideInLeft">
-                                    <a href="#freelancer-pricing" class="slider btn btn-primary"
-                                        aria-label="freelancer-pricing">Meus Serviços</a>
-                                    <a href="#" class="slider btn btn-primary border" aria-label="contato">Entre
-                                        em Contato</a>
+            <?php foreach ($lang["banners"] as $banner): ?>
+                <div class="banner-carousel-item" style="background-image:url(<?php echo $banner["background"]; ?>)">
+                    <div class="slider-content">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100">
+                                <div class="col-md-12 text-center">
+                                    <?php echo $banner["content"]; ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
 
         <section class="call-to-action-box no-padding">
@@ -150,12 +103,13 @@
                     <div class="row align-items-center">
                         <div class="col-md-8 text-center text-md-left">
                             <div class="call-to-action-text">
-                                <h3 class="action-title">Vamos construir algo incrível juntos!</h3>
+                                <h3 class="action-title"><?php echo $lang["call_to_action"]["title"]; ?></h3>
                             </div>
                         </div>
                         <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
                             <div class="call-to-action-btn">
-                                <a class="btn btn-dark" href="#">Entre em Contato</a>
+                                <a class="btn btn-dark"
+                                    href="<?php echo $lang["call_to_action"]["button"]["link"]; ?>"><?php echo $lang["call_to_action"]["button"]["text"]; ?></a>
                             </div>
                         </div>
                     </div>
@@ -521,7 +475,8 @@
                             <li><a href="#about_me">Sobre mim</a></li>
                             <li><a href="#">Contato</a></li>
                             <li><a href="https://github.com/r4mpo" target="_blank">GitHub</a></li>
-                            <li><a href="https://www.linkedin.com/in/erick-agostinho-684563227/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.linkedin.com/in/erick-agostinho-684563227/"
+                                    target="_blank">LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>
@@ -580,4 +535,5 @@
     <script src="js/script.js"></script>
     </div>
 </body>
+
 </html>
