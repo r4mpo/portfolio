@@ -4,28 +4,14 @@ declare(strict_types=1);
 
 namespace App\Application\Renders\Home;
 
+use App\Application\Renders\Render;
 use Slim\Psr7\Request;
 use Slim\Psr7\Response;
-use Slim\Views\PhpRenderer;
 
-class HomeRender
+class HomeRender extends Render
 {
-    protected PhpRenderer $view;
-
-    public function __construct(PhpRenderer $view)
-    {
-        $this->view = $view;
-    }
-
     public function __invoke(Request $request, Response $response, array $args): Response
     {
-        $lang = require __DIR__ . '/../../Langs/pt-br/HomeLangs.php';
-$this->view->setTemplatePath('views');
-
-var_dump($this->view->getTemplatePath());exit;
-        return $this->view->render($response, 'home.php', [
-            'title' => 'Home',
-            'lang' => $lang
-        ]);
+        return $this->template($response, 'home', 'Home');
     }
 }
