@@ -1,4 +1,5 @@
 <?php include __DIR__ . '/layouts/header.php'; ?>
+
 <div id="banner-area" class="banner-area" style="background-image:url(<?= $lang['banner']['background'] ?>)">
   <div class="banner-text">
     <div class="container">
@@ -56,4 +57,5 @@
     </div>
   </div>
 </section>
+
 <?php include __DIR__ . '/layouts/footer.php'; ?>
