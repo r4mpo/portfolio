@@ -27,8 +27,8 @@ return [
         'background' => 'images/banner/banner1.jpg',
         'title' => 'Clientes',
         'breadcrumb' => [
-            ['text' => 'Home', 'link' => '#'],
-            ['text' => 'Clientes', 'link' => '#'],
+            ['text' => 'Home', 'link' => '/'],
+            ['text' => 'Clientes', 'link' => '/clients'],
         ],
     ],
 

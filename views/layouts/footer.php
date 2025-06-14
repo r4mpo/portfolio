@@ -24,9 +24,9 @@
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
                     <h3 class="widget-title">Links úteis</h3>
                     <ul class="list-arrow">
-                        <li><a href="#repositories">Projetos</a></li>
-                        <li><a href="#about_me">Sobre mim</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="/#repositories">Projetos</a></li>
+                        <li><a href="/#about_me">Sobre mim</a></li>
+                        <li><a href="/contact">Contato</a></li>
                         <li><a href="https://github.com/r4mpo" target="_blank">GitHub</a></li>
                         <li><a href="https://www.linkedin.com/in/erick-agostinho-684563227/"
                                 target="_blank">LinkedIn</a></li>
@@ -52,10 +52,10 @@
                 <div class="col-md-6">
                     <div class="footer-menu text-center text-md-right">
                         <ul class="list-unstyled">
-                            <li><a href="#about_me">Sobre</a></li>
-                            <li><a href="#repositories">Projetos</a></li>
-                            <li><a href="#">Contato</a></li>
-                        </ul>
+                            <li><a href="/#about_me">Sobre</a></li>
+                            <li><a href="/#repositories">Projetos</a></li>
+                            <li><a href="/contact">Contato</a></li>
+                        </ul/contact
                     </div>
                 </div>
             </div>

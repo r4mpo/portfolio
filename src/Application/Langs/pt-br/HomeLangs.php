@@ -32,7 +32,7 @@ return [
                 <h3 class="slide-sub-title" data-animation-in="slideInRight">DESENVOLVEDOR FULL STACK</h3>
                 <p data-animation-in="slideInLeft" data-duration-in="1.2">
                     <a href="#repositories" class="slider btn btn-primary">Meus Projetos</a>
-                    <a href="#" class="slider btn btn-primary border">Fale Comigo</a>
+                    <a href="/contact" class="slider btn btn-primary border">Fale Comigo</a>
                 </p>
             ',
         ],
@@ -43,7 +43,7 @@ return [
                 <h3 class="slide-title" data-animation-in="fadeIn">Projetos robustos e escaláveis</h3>
                 <h3 class="slide-sub-title" data-animation-in="slideInLeft">Back-End | Front-End | IoT | API | DevOps</h3>
                 <p data-animation-in="slideInRight">
-                    <a href="#" class="slider btn btn-primary border">Ver Experiência</a>
+                    <a href="/experience" class="slider btn btn-primary border">Ver Experiência</a>
                 </p>
             ',
         ],
@@ -55,7 +55,7 @@ return [
                 <p class="slider-description lead" data-animation-in="slideInRight">API | Laravel | Vue.js | Docker | CI/CD | Banco de Dados</p>
                 <div data-animation-in="slideInLeft">
                     <a href="#freelancer-pricing" class="slider btn btn-primary" aria-label="freelancer-pricing">Meus Serviços</a>
-                    <a href="#" class="slider btn btn-primary border" aria-label="contato">Entre em Contato</a>
+                    <a href="/contact" class="slider btn btn-primary border" aria-label="contato">Entre em Contato</a>
                 </div>
             ',
         ],
@@ -70,7 +70,7 @@ return [
         'title' => 'Vamos construir algo incrível juntos!',
         'button' => [
             'text' => 'Entre em Contato',
-            'link' => '#',
+            'link' => '/contact',
         ],
     ],
 
@@ -193,7 +193,7 @@ return [
         ],
         'orcamento_btn' => [
             'text' => 'Solicitar Orçamento',
-            'link' => '#',
+            'link' => '/contact',
         ],
     ],
 

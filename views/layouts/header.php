@@ -44,31 +44,31 @@
                                 <div id="navbar-collapse" class="collapse navbar-collapse">
                                     <ul class="nav navbar-nav mr-auto">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a href="/" class="nav-link">
                                                 <i class="bi bi-house-door-fill"></i> Home
                                             </a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="/clientes.html" class="nav-link">
+                                            <a href="/clients" class="nav-link">
                                                 <i class="bi bi-people-fill"></i> Clientes
                                             </a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="#education" class="nav-link">
+                                            <a href="/education" class="nav-link">
                                                 <i class="bi bi-mortarboard-fill"></i> Escolaridade
                                             </a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="#experiencia" class="nav-link">
+                                            <a href="/experience" class="nav-link">
                                                 <i class="bi bi-briefcase-fill"></i> Experiência
                                             </a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="#contato" class="nav-link">
+                                            <a href="/contact" class="nav-link">
                                                 <i class="bi bi-envelope-fill"></i> Contato
                                             </a>
                                         </li>

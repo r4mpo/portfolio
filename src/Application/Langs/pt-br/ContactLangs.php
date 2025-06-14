@@ -27,8 +27,8 @@ return [
         'background' => 'images/banner/banner4.jpg',
         'title' => 'Contato',
         'breadcrumb' => [
-            ['text' => 'Home', 'link' => '#'],
-            ['text' => 'Contato', 'link' => '#'],
+            ['text' => 'Home', 'link' => '/'],
+            ['text' => 'Contato', 'link' => '/contact'],
         ],
     ],
 
@@ -48,7 +48,7 @@ return [
      * ---------------------------------------------------------------
      */
     'form' => [
-        'action' => 'https://formspree.io/f/YOUR_ID_HERE',
+        'action' => '/contact/send',
         'fields' => [
             [
                 'type' => 'text',
