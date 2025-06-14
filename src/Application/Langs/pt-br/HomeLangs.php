@@ -115,21 +115,21 @@ return [
         ],
         'repos' => [
             [
-                'title' => 'Perfil r4mpo',
-                'desc' => 'GitHub Profile',
+                'title' => 'Perfil @r4mpo',
+                'desc' => 'GITHUB PROFILE',
                 'image' => 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
                 'link' => 'https://github.com/r4mpo',
             ],
             [
                 'title' => 'Perfect Laravel Base',
                 'desc' => 'Base starter para Laravel, com arquitetura limpa e melhores práticas.',
-                'svg' => 'laravel',
+                'image' => 'laravel',
                 'link' => 'https://github.com/r4mpo/perfect-laravel-base',
             ],
             [
                 'title' => 'Cadastro Produtos C++',
                 'desc' => 'Projeto para cadastro de produtos desenvolvido em C++.',
-                'svg' => 'c++',
+                'image' => 'c++',
                 'link' => 'https://github.com/r4mpo/cadastro-produtos-cpp',
             ],
             [
