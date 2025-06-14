@@ -1,42 +1,173 @@
-# Slim Framework 4 Skeleton Application
+2025 - Erick Agostinho
 
-[![Coverage Status](https://coveralls.io/repos/github/slimphp/Slim-Skeleton/badge.svg?branch=master)](https://coveralls.io/github/slimphp/Slim-Skeleton?branch=master)
+# Portfólio Pessoal - Erick Agostinho
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest Slim 4 with Slim PSR-7 implementation and PHP-DI container implementation. It also uses the Monolog logger.
+![Banner](https://raw.githubusercontent.com/r4mpo/erickagostinho/main/public/images/banner/banner4.jpg)
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+> Este é o repositório do meu portfólio pessoal desenvolvido com **Slim Framework** em PHP.
+> Um site leve, moderno e organizado para apresentar meus projetos, experiência, formação acadêmica e contato.
 
-## Install the Application
+---
 
-Run this command from the directory in which you want to install your new Slim Framework application. You will require PHP 7.4 or newer.
+## Índice
 
-```bash
-composer create-project slim/slim-skeleton [my-app-name]
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Rodar Localmente](#como-rodar-localmente)
+- [Rotas Disponíveis](#rotas-disponíveis)
+- [Personalização do Conteúdo](#personaliza%C3%A7%C3%A3o-do-conte%C3%BAdo)
+- [Contribuição](#contribui%C3%A7%C3%A3o)
+- [Licença](#licen%C3%A7a)
+
+---
+
+## Sobre o Projeto
+
+Este portfólio foi criado para apresentar minha trajetória profissional e acadêmica, assim como meus principais projetos e formas de contato, tudo isso utilizando o microframework Slim, que facilita a construção de aplicações PHP minimalistas e eficientes.
+
+---
+
+## Tecnologias Utilizadas
+
+- [PHP 8.x](https://www.php.net/)
+- [Slim Framework 4](https://www.slimframework.com/)
+- [Composer](https://getcomposer.org/) para gerenciamento de dependências
+- [Twig / PHP Renderer](https://twig.symfony.com/) para views (dependendo da configuração)
+- Bootstrap 5 para layout responsivo e moderno
+- HTML5, CSS3 e JavaScript para frontend
+
+---
+
+## Estrutura do Projeto
+
+```
+/
+├── public/                 # Arquivos públicos (index.php, assets)
+│   ├── css/
+│   ├── images/
+│   └── js/
+├── src/                    # Código fonte PHP
+│   └── Application/
+│       └── Renders/        # Classes de renderização para cada rota (Controllers)
+├── views/                  # Arquivos de view (templates)
+├── languages/              # Arquivos de idiomas para conteúdo multilíngue
+├── routes.php              # Definição das rotas do Slim
+├── composer.json           # Dependências do projeto
+└── README.md               # Este arquivo
 ```
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+---
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writable.
+## Como Rodar Localmente
 
-To run the application in development, you can run these commands 
+### Pré-requisitos
 
-```bash
-cd [my-app-name]
-composer start
-```
+- PHP >= 8.0
+- Composer instalado
+- Servidor web (Apache, Nginx) ou o servidor embutido do PHP
 
-Or you can use `docker-compose` to run the app with `docker`, so you can run these commands:
-```bash
-cd [my-app-name]
-docker-compose up -d
-```
-After that, open `http://localhost:8080` in your browser.
+### Passos para executar
 
-Run this command in the application directory to run the test suite
+1. Clone o repositório:
 
 ```bash
-composer test
+git clone https://github.com/r4mpo/erickagostinho.git
+cd erickagostinho
 ```
 
-That's it! Now go build something cool.
+2. Instale as dependências com Composer:
+
+```bash
+composer install
+```
+
+3. Inicie o servidor embutido PHP para testes locais:
+
+```bash
+php -S localhost:8080 -t public
+```
+
+4. Acesse no navegador:
+
+```
+http://localhost:8080
+```
+
+---
+
+## Rotas Disponíveis
+
+| Rota            | Descrição               |
+| --------------- | ------------------------- |
+| `/`           | Página inicial (home)    |
+| `/clients`    | Página de clientes       |
+| `/contact`    | Formulário de contato    |
+| `/education`  | Formação acadêmica     |
+| `/experience` | Experiência profissional |
+
+As rotas são definidas em `routes.php` e cada uma está associada a uma classe renderizadora que controla o conteúdo.
+
+---
+
+## Personalização do Conteúdo
+
+O conteúdo textual do site está organizado em arquivos de idioma no diretório `languages/` com estrutura clara e comentários para facilitar a manutenção e tradução.
+
+Exemplo de uso no controller:
+
+```php
+$lang = require __DIR__ . '/../../languages/pt-br/contact.php';
+```
+
+---
+
+## Como usar rotas dinamicamente
+
+O projeto usa o Slim `RouteParserInterface` para gerar URLs baseadas no nome da rota, evitando hardcoded e facilitando mudanças:
+
+```php
+$routeParser = $this->routeParser; // injetado no controller
+
+$urlContact = $routeParser->urlFor('contact');
+```
+
+Nas views, você pode receber o `routeParser` e gerar links como:
+
+```php
+<a href="<?= $routeParser->urlFor('home') ?>">Home</a>
+```
+
+---
+
+## Contribuição
+
+Contribuições são bem-vindas! Se quiser sugerir melhorias, abrir issues ou pull requests, siga os passos:
+
+1. Fork este repositório
+2. Crie uma branch para sua feature (`git checkout -b feature/nome-da-feature`)
+3. Faça commits claros e organizados
+4. Envie o pull request para revisão
+
+---
+
+## Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## Contato
+
+Erick Agostinho
+[LinkedIn](https://www.linkedin.com/in/r4mpo) | [GitHub](https://github.com/r4mpo) | [E-mail](mailto:erick@agostinho.dev)
+
+---
+
+### Screenshots
+
+| Home                                                                                                 | Contato                                                                                                    |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| ![Home](https://raw.githubusercontent.com/r4mpo/erickagostinho/main/public/images/home-screenshot.png) | ![Contato](https://raw.githubusercontent.com/r4mpo/erickagostinho/main/public/images/contact-screenshot.png) |
+
+---
