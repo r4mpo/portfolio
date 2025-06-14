@@ -42,19 +42,47 @@ Este portfólio foi criado para apresentar minha trajetória profissional e acad
 ## Estrutura do Projeto
 
 ```
-/
-├── public/                 # Arquivos públicos (index.php, assets)
-│   ├── css/
-│   ├── images/
-│   └── js/
-├── src/                    # Código fonte PHP
-│   └── Application/
-│       └── Renders/        # Classes de renderização para cada rota (Controllers)
-├── views/                  # Arquivos de view (templates)
-├── languages/              # Arquivos de idiomas para conteúdo multilíngue
-├── routes.php              # Definição das rotas do Slim
-├── composer.json           # Dependências do projeto
-└── README.md               # Este arquivo
+erickagostinho/
+│
+├── composer.json           # Arquivo de configuração do Composer
+├── composer.lock           # Arquivo de bloqueio de dependências
+│
+├── phpunit.xml             # Arquivo de configuração do PHPUnit (ainda não utilizado)
+├── README.md               # Readme do projeto (você já tem um gerado)
+│
+├── public/                 # Diretório público acessado pelo navegador
+│   └── index.php           # Front controller da aplicação
+│
+├── app/                    # Definição centralizada das rotas
+│   └── routes.php
+│
+├── src/                    # Código-fonte principal
+│   │
+│   ├── Langs/              # Arquivos de idioma, um para cada view
+│   │   ├── clients.php
+│   │   ├── contact.php
+│   │   ├── education.php
+│   │   ├── experience.php
+│   │   └── home.php
+│   │
+│   ├── Renders/            # Controllers que fazem o papel de renderização
+│   │   ├── ClientsRender.php
+│   │   ├── ContactRender.php
+│   │   ├── EducationRender.php
+│   │   ├── ExperienceRender.php
+│   │   └── HomeRender.php
+│   │
+│   └── Render.php          # Classe base de renderização herdada por todos os renders
+│
+├── vendor/                 # Dependências instaladas via Composer (Slim, PHP-DI, etc)
+│
+└── views/                  # Arquivos de visualização (templates HTML)
+    ├── clients.php
+    ├── contact.php
+    ├── education.php
+    ├── experience.php
+    └── home.php
+
 ```
 
 ---
