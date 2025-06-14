@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Renders;
+namespace App\Renders;
 
 use Slim\Psr7\Response;
 use Slim\Views\PhpRenderer;
@@ -13,7 +13,7 @@ class Render
 
     public function __construct(PhpRenderer $view)
     {
-        $path = realpath(__DIR__ . "/../../../views");
+        $path = realpath(__DIR__ . "/../../views");
 
         if ($path === false) {
             throw new \RuntimeException("Diretório de views não encontrado.");

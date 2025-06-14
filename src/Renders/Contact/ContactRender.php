@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Renders\Contact;
+namespace App\Renders\Contact;
 
-use App\Application\Renders\Render;
+use App\Renders\Render;
 use Slim\Psr7\Request;
 use Slim\Psr7\Response;
 

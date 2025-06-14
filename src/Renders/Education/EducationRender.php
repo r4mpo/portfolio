@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Renders\Education;
+namespace App\Renders\Education;
 
-use App\Application\Renders\Render;
+use App\Renders\Render;
 use Slim\Psr7\Request;
 use Slim\Psr7\Response;
 
