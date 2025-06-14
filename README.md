@@ -178,24 +178,3 @@ Contribuições são bem-vindas! Se quiser sugerir melhorias, abrir issues ou pu
 4. Envie o pull request para revisão
 
 ---
-
-## Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-## Contato
-
-Erick Agostinho
-[LinkedIn](https://www.linkedin.com/in/r4mpo) | [GitHub](https://github.com/r4mpo) | [E-mail](mailto:erick@agostinho.dev)
-
----
-
-### Screenshots
-
-| Home                                                                                                 | Contato                                                                                                    |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| ![Home](https://raw.githubusercontent.com/r4mpo/erickagostinho/main/public/images/home-screenshot.png) | ![Contato](https://raw.githubusercontent.com/r4mpo/erickagostinho/main/public/images/contact-screenshot.png) |
-
----
