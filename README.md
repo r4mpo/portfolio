@@ -42,7 +42,7 @@ Este portfólio foi criado para apresentar minha trajetória profissional e acad
 ## Estrutura do Projeto
 
 ```
-erickagostinho/
+portfolio/
 │
 ├── composer.json           # Arquivo de configuração do Composer
 ├── composer.lock           # Arquivo de bloqueio de dependências
