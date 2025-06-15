@@ -46,8 +46,6 @@ erickagostinho/
 │
 ├── composer.json           # Arquivo de configuração do Composer
 ├── composer.lock           # Arquivo de bloqueio de dependências
-│
-├── phpunit.xml             # Arquivo de configuração do PHPUnit (ainda não utilizado)
 ├── README.md               # Readme do projeto (você já tem um gerado)
 │
 ├── public/                 # Diretório público acessado pelo navegador
@@ -59,11 +57,12 @@ erickagostinho/
 ├── src/                    # Código-fonte principal
 │   │
 │   ├── Langs/              # Arquivos de idioma, um para cada view
-│   │   ├── clients.php
-│   │   ├── contact.php
-│   │   ├── education.php
-│   │   ├── experience.php
-│   │   └── home.php
+│   ├──── Langs/
+│   │   ├──── ClientsLangs.php
+│   │   ├──── ContactLangs.php
+│   │   ├──── EducationLangs.php
+│   │   ├──── ExperienceLangs.php
+│   │   ├──── HomeLangs.php
 │   │
 │   ├── Renders/            # Controllers que fazem o papel de renderização
 │   │   ├── ClientsRender.php
