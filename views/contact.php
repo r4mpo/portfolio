@@ -34,15 +34,14 @@
 
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <form action="<?= $lang['form']['action'] ?>" method="POST" class="education-and-xp-card p-4">
+        <form action="<?= $lang['form']['action'] ?>" method="POST" class="education-and-xp-card p-4" onsubmit="return false;">
           <?php foreach ($lang['form']['fields'] as $field): ?>
             <div class="mb-3">
               <label for="<?= $field['id'] ?>" class="form-label"><?= $field['label'] ?></label>
 
               <?php if ($field['type'] === 'textarea'): ?>
                 <textarea class="form-control" id="<?= $field['id'] ?>" name="<?= $field['name'] ?>"
-                  rows="<?= $field['rows'] ?>" <?= $field['required'] ? 'required' : '' ?>>
-                                    </textarea>
+                  rows="<?= $field['rows'] ?>" <?= $field['required'] ? 'required' : '' ?>></textarea>
               <?php else: ?>
                 <input type="<?= $field['type'] ?>" class="form-control" id="<?= $field['id'] ?>"
                   name="<?= $field['name'] ?>" <?= $field['required'] ? 'required' : '' ?>>
@@ -51,7 +50,7 @@
           <?php endforeach; ?>
 
           <div class="text-center mt-4">
-            <button type="submit" class="btn btn-primary px-5"><?= $lang['form']['submit_text'] ?></button>
+            <button type="submit" class="btn btn-primary px-5 sendMail"><?= $lang['form']['submit_text'] ?></button>
           </div>
         </form>
       </div>

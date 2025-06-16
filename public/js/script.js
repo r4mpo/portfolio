@@ -85,6 +85,79 @@ jQuery(function ($) {
 
 	$(document).ready(function () {
 
+		// Send mail
+		function sendMail() {
+			$('.sendMail').on('click', function (e) {
+				e.preventDefault(); // evita submit padrão
+
+				var form = $(this).closest('form');
+
+				// Pega os valores dos inputs pelo name (ajuste se precisar)
+				var name = form.find('input[name="name"]').val().trim();
+				var email = form.find('input[name="email"]').val().trim();
+				var subject = form.find('input[name="subject"]').val().trim();
+				var message = form.find('textarea[name="message"]').val().trim();
+
+				// Validação simples
+				if (!name) {
+					alert('Por favor, preencha o nome.');
+					return;
+				}
+
+				if (!email) {
+					alert('Por favor, preencha o e-mail.');
+					return;
+				}
+
+				// Regex simples para validar email
+				var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				if (!emailRegex.test(email)) {
+					alert('E-mail inválido.');
+					return;
+				}
+
+				if (!subject) {
+					alert('Por favor, preencha o assunto.');
+					return;
+				}
+
+				if (!message) {
+					alert('Por favor, preencha a mensagem.');
+					return;
+				}
+
+				// Monta a URL da ação
+				var action = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + form.attr('action');
+
+				// Envia via AJAX usando fetch API (mais moderno) ou $.ajax
+				fetch(action, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						name: name,
+						email: email,
+						subject: subject,
+						message: message
+					})
+				})
+					.then(response => response.json())
+					.then(data => {
+						if (data.status === 'success') {
+							alert(data.message);
+							form[0].reset();
+						} else {
+							alert('Erro: ' + data.message);
+						}
+					})
+					.catch(() => {
+						alert('Erro ao enviar a mensagem. Tente novamente mais tarde.');
+					});
+			});
+		}
+		sendMail();
+
 		// navSearch show/hide
 		function navSearch() {
 			$('.nav-search').on('click', function () {

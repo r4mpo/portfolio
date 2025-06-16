@@ -61,7 +61,7 @@ return [
                 'type' => 'email',
                 'label' => 'E-mail',
                 'id' => 'email',
-                'name' => '_replyto',
+                'name' => 'email',
                 'required' => true,
             ],
             [
