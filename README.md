@@ -2,7 +2,7 @@
 
 # Portfólio Pessoal - Erick Agostinho
 
-![Banner](https://raw.githubusercontent.com/r4mpo/erickagostinho/main/public/images/banner/banner4.jpg)
+![Banner](https://raw.githubusercontent.com/r4mpo/portfolio/main/public/images/banner/banner4.jpg)
 
 > Este é o repositório do meu portfólio pessoal desenvolvido com **Slim Framework** em PHP.
 > Um site leve, moderno e organizado para apresentar meus projetos, experiência, formação acadêmica e contato.
@@ -99,8 +99,8 @@ portfolio/
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/r4mpo/erickagostinho.git
-cd erickagostinho
+git clone https://github.com/r4mpo/portfolio.git
+cd portfolio
 ```
 
 2. Instale as dependências com Composer:
