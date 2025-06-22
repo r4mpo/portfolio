@@ -2,10 +2,10 @@
 
 namespace App\Application\Actions;
 
-use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use PHPMailer\PHPMailer\PHPMailer;
 use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
 class SendEmailAction
 {
@@ -14,34 +14,24 @@ class SendEmailAction
         $mail = new PHPMailer(true);
 
         try {
-
-            // Looking to send emails in production? Check out our Email API/SMTP product!
             $mail->isSMTP();
-            $mail->Host = 'sandbox.smtp.mailtrap.io';
             $mail->SMTPAuth = true;
-            $mail->Username = 'dbbadd15243286';
-            $mail->Password = 'e5ad20de66ddaf';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 2525;
+            $mail->Host = \config('mail.host');
+            $mail->Port = \config('mail.port');
+            $mail->Username = \config('mail.username');
+            $mail->Password = \config('mail.password');
+            $mail->SMTPSecure = \config('mail.encryption');
 
-            $mail->setFrom('spidersoft@gmail.com.br', 'Spider Soft');
-            $mail->addAddress('spidersoft@gmail.com.br', 'Spider Soft');
+            $mail->setFrom(\config('mail.from.address'), \config('mail.name'));
+            $mail->addAddress(\config('mail.from.address'), \config('mail.name'));
 
             $mail->isHTML(true);
-            $mail->Subject = "Contato do site: $assunto";
-            $mail->Body = "
-            <h3>Nova mensagem de contato</h3>
-            <p><strong>Nome:</strong> $nome</p>
-            <p><strong>E-mail:</strong> $email</p>
-            <p><strong>Assunto:</strong> $assunto</p>
-            <p><strong>Mensagem:</strong><br>$mensagem</p>
-        ";
-
-            $mail->AltBody = "Nova mensagem de contato\n\nNome: $nome\nE-mail: $email\nAssunto: $assunto\nMensagem: $mensagem";
+            $mail->Subject = \renderSubjectMail($assunto);
+            $mail->Body = \renderBodyMail($nome, $email, $assunto, $mensagem);
+            $mail->AltBody = \renderAltBodyMail($nome, $email, $assunto, $mensagem);
 
             $mail->send();
             return true;
-
         } catch (Exception $e) {
             error_log("Erro ao enviar e-mail: {$mail->ErrorInfo}");
             return false;
@@ -50,7 +40,7 @@ class SendEmailAction
 
     public function __invoke(Request $request, Response $response, array $args): Response
     {
-        $data = json_decode((string)$request->getBody(), true);
+        $data = json_decode((string) $request->getBody(), true);
 
         if (!isset($data['name'], $data['email'], $data['subject'], $data['message'])) {
             $response->getBody()->write(json_encode([
@@ -65,8 +55,7 @@ class SendEmailAction
         $assunto = trim($data['subject']);
         $mensagem = trim($data['message']);
 
-        // Simulação do envio, substitua pela sua lógica real
-        $enviado = true; // ou sua lógica de envio real
+        $enviado = $this->sendContactEmail($nome, $email, $assunto, $mensagem);
 
         if ($enviado) {
             $response->getBody()->write(json_encode([

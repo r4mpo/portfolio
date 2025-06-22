@@ -35,6 +35,9 @@ $callableResolver = $app->getCallableResolver();
 $routes = require __DIR__ . '/../app/routes.php';
 $routes($app);
 
+// Register functions
+$functions = require __DIR__ . '/../app/functions.php';
+
 /** @var SettingsInterface $settings */
 $settings = $container->get(SettingsInterface::class);
 
