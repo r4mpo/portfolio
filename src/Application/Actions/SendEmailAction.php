@@ -16,19 +16,19 @@ class SendEmailAction
         try {
             $mail->isSMTP();
             $mail->SMTPAuth = true;
-            $mail->Host = \config('mail.host');
-            $mail->Port = \config('mail.port');
-            $mail->Username = \config('mail.username');
-            $mail->Password = \config('mail.password');
-            $mail->SMTPSecure = \config('mail.encryption');
+            $mail->Host = config('mail.host');
+            $mail->Port = config('mail.port');
+            $mail->Username = config('mail.username');
+            $mail->Password = config('mail.password');
+            $mail->SMTPSecure = config('mail.encryption');
 
-            $mail->setFrom(\config('mail.from.address'), \config('mail.name'));
-            $mail->addAddress(\config('mail.from.address'), \config('mail.name'));
+            $mail->setFrom(config('mail.from.address'), config('mail.name'));
+            $mail->addAddress(config('mail.from.address'), config('mail.name'));
 
             $mail->isHTML(true);
-            $mail->Subject = \renderSubjectMail($assunto);
-            $mail->Body = \renderBodyMail($nome, $email, $assunto, $mensagem);
-            $mail->AltBody = \renderAltBodyMail($nome, $email, $assunto, $mensagem);
+            $mail->Subject = renderSubjectMail($assunto);
+            $mail->Body = renderBodyMail($nome, $email, $assunto, $mensagem);
+            $mail->AltBody = renderAltBodyMail($nome, $email, $assunto, $mensagem);
 
             $mail->send();
             return true;
