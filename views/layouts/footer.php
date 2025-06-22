@@ -3,33 +3,23 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-4 col-md-6 footer-widget footer-about">
-                    <h3 class="widget-title">Sobre</h3>
+                    <h3 class="widget-title"><?= $langFooter['about']['title'] ?></h3>
                     <img loading="lazy" width="200px" class="footer-logo" src="images/erick-photo.jpeg"
                         alt="Erick Agostinho">
-                    <p>Sou desenvolvedor backend, apaixonado por PHP, Laravel, arquitetura de software e boas
-                        práticas.
-                        Neste espaço compartilho projetos, experiências e meu portfólio profissional.</p>
+                    <p><?= $langFooter['about']['description'] ?></p>
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-                    <h3 class="widget-title">O que eu faço</h3>
-                    <div class="working-hours">
-                        Trabalho com desenvolvimento backend, APIs, microsserviços e também na modelagem de
-                        arquiteturas escaláveis, seguindo padrões de mercado e boas práticas.
-                        <br><br>
-                        Siga-me nas redes para mais conteúdos e novidades.
-                    </div>
+                    <h3 class="widget-title"><?= $langFooter['what_i_do']['title'] ?></h3>
+                    <div class="working-hours"><?= $langFooter['what_i_do']['description'] ?></div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-                    <h3 class="widget-title">Links úteis</h3>
+                    <h3 class="widget-title"><?= $langFooter['links']['title']; ?></h3>
                     <ul class="list-arrow">
-                        <li><a href="/#repositories">Projetos</a></li>
-                        <li><a href="/#about_me">Sobre mim</a></li>
-                        <li><a href="/contact">Contato</a></li>
-                        <li><a href="https://github.com/r4mpo" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/erick-agostinho-684563227/"
-                                target="_blank">LinkedIn</a></li>
+                        <?php foreach ($langFooter['links']['items'] as $link): ?>
+                            <li><a href="<?= $link['link'] ?>" <?= isset($link['external']) && $link['external'] ? 'target="_blank"' : '' ?>><?= $link['text'] ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
@@ -42,9 +32,7 @@
                 <div class="col-md-6">
                     <div class="copyright-info">
                         <span>&copy;
-                            <script>document.write(new Date().getFullYear())</script> Erick Agostinho. Todos os
-                            direitos
-                            reservados.
+                            <script>document.write(new Date().getFullYear())</script> <?= $langFooter['copyright']['text']; ?>
                         </span>
                     </div>
                 </div>
@@ -52,10 +40,10 @@
                 <div class="col-md-6">
                     <div class="footer-menu text-center text-md-right">
                         <ul class="list-unstyled">
-                            <li><a href="/#about_me">Sobre</a></li>
-                            <li><a href="/#repositories">Projetos</a></li>
-                            <li><a href="/contact">Contato</a></li>
-                        </ul/contact
+                            <?php foreach ($langFooter['copyright']['menus'] as $menu): ?>
+                                <li><a href="<?= $menu['link'] ?>"><?= $menu['text'] ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
                     </div>
                 </div>
             </div>

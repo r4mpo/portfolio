@@ -39,53 +39,6 @@ Este portfólio foi criado para apresentar minha trajetória profissional e acad
 
 ---
 
-## Estrutura do Projeto
-
-```
-portfolio/
-│
-├── composer.json           # Arquivo de configuração do Composer
-├── composer.lock           # Arquivo de bloqueio de dependências
-├── README.md               # Readme do projeto (você já tem um gerado)
-│
-├── public/                 # Diretório público acessado pelo navegador
-│   └── index.php           # Front controller da aplicação
-│
-├── app/                    # Definição centralizada das rotas
-│   └── routes.php
-│
-├── src/                    # Código-fonte principal
-│   │
-│   ├── Langs/              # Arquivos de idioma, um para cada view
-│   ├──── Langs/
-│   │   ├──── ClientsLangs.php
-│   │   ├──── ContactLangs.php
-│   │   ├──── EducationLangs.php
-│   │   ├──── ExperienceLangs.php
-│   │   ├──── HomeLangs.php
-│   │
-│   ├── Renders/            # Controllers que fazem o papel de renderização
-│   │   ├── ClientsRender.php
-│   │   ├── ContactRender.php
-│   │   ├── EducationRender.php
-│   │   ├── ExperienceRender.php
-│   │   └── HomeRender.php
-│   │
-│   └── Render.php          # Classe base de renderização herdada por todos os renders
-│
-├── vendor/                 # Dependências instaladas via Composer (Slim, PHP-DI, etc)
-│
-└── views/                  # Arquivos de visualização (templates HTML)
-    ├── clients.php
-    ├── contact.php
-    ├── education.php
-    ├── experience.php
-    └── home.php
-
-```
-
----
-
 ## Como Rodar Localmente
 
 ### Pré-requisitos
@@ -145,24 +98,6 @@ Exemplo de uso no controller:
 
 ```php
 $lang = require __DIR__ . '/../../languages/pt-br/contact.php';
-```
-
----
-
-## Como usar rotas dinamicamente
-
-O projeto usa o Slim `RouteParserInterface` para gerar URLs baseadas no nome da rota, evitando hardcoded e facilitando mudanças:
-
-```php
-$routeParser = $this->routeParser; // injetado no controller
-
-$urlContact = $routeParser->urlFor('contact');
-```
-
-Nas views, você pode receber o `routeParser` e gerar links como:
-
-```php
-<a href="<?= $routeParser->urlFor('home') ?>">Home</a>
 ```
 
 ---
