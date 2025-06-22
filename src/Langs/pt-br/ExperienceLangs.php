@@ -88,7 +88,7 @@ return [
     'resume_button' => [
         'text' => 'Currículo',
         'icon' => 'bi bi-filetype-pdf',
-        'url' => '#',
+        'url' => '/pdf/curriculo.pdf',
     ],
 
 ];
