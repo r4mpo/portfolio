@@ -10,7 +10,7 @@ jQuery(function ($) {
 
   /* ----------------------------------------------------------- */
   /*  Fixed header
-	/* ----------------------------------------------------------- */
+  /* ----------------------------------------------------------- */
   $(window).on("scroll", function () {
     // fixedHeader on scroll
     function fixedHeader() {
@@ -121,11 +121,10 @@ jQuery(function ($) {
           return showAlert("error", "Por favor, preencha a mensagem.");
 
         // URL dinâmica
-        const action = `${window.location.protocol}//${
-          window.location.hostname
-        }${window.location.port ? `:${window.location.port}` : ""}${form.attr(
-          "action"
-        )}`;
+        const action = `${window.location.protocol}//${window.location.hostname
+          }${window.location.port ? `:${window.location.port}` : ""}${form.attr(
+            "action"
+          )}`;
 
         try {
           const response = await fetch(action, {
@@ -155,6 +154,30 @@ jQuery(function ($) {
     }
 
     sendMail();
+
+    // Set lang
+    function setLang() {
+      $(".linkSetLang").on("click", async function (e) {
+        e.preventDefault(); // evita comportamento padrão, se for <a>
+        const action = $(this).data("setlang");
+
+        try {
+          const response = await fetch(action);
+          const data = await response.json();
+
+          if (data.success) {
+            location.reload(); // recarrega a página
+          } else {
+            showAlert("error", data.message || "Erro ao trocar idioma.");
+          }
+        } catch (error) {
+          showAlert("error", "Erro na requisição.");
+          console.error("Erro ao trocar idioma:", error);
+        }
+      });
+    }
+
+    setLang();
 
     // navSearch show/hide
     function navSearch() {

@@ -39,13 +39,27 @@
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
 
-                                <div id="navbar-collapse" class="collapse navbar-collapse">
-                                    <ul class="nav navbar-nav mr-auto">
+                                <div id="navbar-collapse" class="collapse navbar-collapse d-flex justify-content-between">
+                                    <ul class="nav navbar-nav">
                                         <?php foreach ($langHeader['menus'] as $menu): ?>
                                         <li class="nav-item">
                                             <?= $menu ?>
                                         </li>
                                         <?php endforeach; ?>
+                                    </ul>
+                                        
+                                    <!-- Bandeiras no canto direito -->
+                                    <ul class="nav navbar-nav">
+                                        <li class="nav-item">
+                                            <a href="#" data-setlang="setLang?lang=pt-br" class="linkSetLang nav-link" title="Português (Brasil)">
+                                                <img src="/images/flags/br.svg" alt="Brazil Flag" style="width: 75px; height: 45px;">
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" data-setlang="setLang?lang=en-us" class="linkSetLang nav-link" title="English (USA)">
+                                                <img src="/images/flags/us.svg" alt="USA Flag" style="width: 75px; height: 45px;">
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </nav>

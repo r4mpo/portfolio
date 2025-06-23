@@ -60,4 +60,5 @@ if (!function_exists('config')) {
         return $value;
     }
 }
+
 ?>

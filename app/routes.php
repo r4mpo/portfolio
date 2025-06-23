@@ -8,6 +8,7 @@ use App\Renders\Clients\ClientsRender;
 use App\Renders\Contact\ContactRender;
 use App\Renders\Education\EducationRender;
 use App\Application\Actions\SendEmailAction;
+use App\Application\Actions\SetLangAction;
 use App\Renders\Experience\ExperienceRender;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -22,6 +23,7 @@ return function (App $app) {
     $app->get('/contact', ContactRender::class);
     $app->get('/education', EducationRender::class);
     $app->get('/experience', ExperienceRender::class);
-
+    
+    $app->get('/setLang', SetLangAction::class);
     $app->post('/contact/send', SendEmailAction::class);
 };

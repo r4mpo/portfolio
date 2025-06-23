@@ -12,6 +12,6 @@ class ClientsRender extends Render
 {
     public function __invoke(Request $request, Response $response, array $args): Response
     {
-        return $this->template($response, "clients", "Clients", "pt-br/ClientsLangs");
+        return $this->template($response, "clients", "Clients", "ClientsLangs");
     }
 }

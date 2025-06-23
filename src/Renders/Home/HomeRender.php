@@ -12,6 +12,6 @@ class HomeRender extends Render
 {
     public function __invoke(Request $request, Response $response, array $args): Response
     {
-        return $this->template($response, "home", "Home", "pt-br/HomeLangs");
+        return $this->template($response, "home", "Home", "HomeLangs");
     }
 }

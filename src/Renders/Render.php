@@ -21,13 +21,15 @@ class Render
         $this->view->setTemplatePath($path);
     }
 
-    protected function template(Response $response, $template, $title, $lang): Response
+    protected function template(Response $response, $template, $title, $file): Response
     {
+        // Recupera a linguagem setada na session, ou define pt-br por padrão
+        $getSessionLang = (isset($_SESSION['lang']) ? $_SESSION['lang'] : 'pt-br');
         // Renderizando linguagens da página atual
-        $lang = require __DIR__ . '/../Langs/' . $lang . '.php';
+        $lang = require __DIR__ . '/../Langs/' . $getSessionLang . '/' . $file . '.php';
         // Linguagens presentes no Header e no Footer
-        $langHeader = require __DIR__ . '/../Langs/pt-br/HeaderLangs.php';
-        $langFooter = require __DIR__ . '/../Langs/pt-br/FooterLangs.php';
+        $langHeader = require __DIR__ . '/../Langs/' . $getSessionLang . '/HeaderLangs.php';
+        $langFooter = require __DIR__ . '/../Langs/' . $getSessionLang . '/FooterLangs.php';
 
         return $this->view->render($response, $template . '.php', [
             'title' => $title,
