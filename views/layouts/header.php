@@ -26,45 +26,46 @@
 </head>
 
 <body>
-    <div class="body-inner">
-        <header id="header" class="header-one">
-            <div class="site-navigation">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                    data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false"
-                                    aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
+<div class="body-inner">
+  <header id="header" class="header-one">
+    <div class="site-navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+              <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-                                <div id="navbar-collapse" class="collapse navbar-collapse d-flex justify-content-between">
-                                    <ul class="nav navbar-nav">
-                                        <?php foreach ($langHeader['menus'] as $menu): ?>
-                                        <li class="nav-item">
-                                            <?= $menu ?>
-                                        </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                        
-                                    <!-- Bandeiras no canto direito -->
-                                    <ul class="nav navbar-nav">
-                                        <li class="nav-item">
-                                            <a href="#" data-setlang="setLang?lang=pt-br" class="linkSetLang nav-link" title="Português (Brasil)">
-                                                <img src="/images/flags/br.svg" alt="Brazil Flag" style="width: 75px; height: 45px;">
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" data-setlang="setLang?lang=en-us" class="linkSetLang nav-link" title="English (USA)">
-                                                <img src="/images/flags/us.svg" alt="USA Flag" style="width: 75px; height: 45px;">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+              <div id="navbar-collapse" class="collapse navbar-collapse">
+                <!-- Menu da esquerda -->
+                <ul class="navbar-nav mr-auto">
+                  <?php foreach ($langHeader['menus'] as $menu): ?>
+                  <li class="nav-item">
+                    <?= $menu ?>
+                  </li>
+                  <?php endforeach; ?>
+                </ul>
+
+                <!-- Bandeiras da direita -->
+                <ul class="navbar-nav ml-auto d-flex flex-row">
+                  <li class="nav-item">
+                    <a href="#" data-setlang="setLang?lang=pt-br" class="linkSetLang nav-link px-2" title="Português (Brasil)">
+                      <img src="/images/flags/br.svg" alt="Brazil Flag" style="width: 36px; height: 24px;">
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" data-setlang="setLang?lang=en-us" class="linkSetLang nav-link px-2" title="English (USA)">
+                      <img src="/images/flags/us.svg" alt="USA Flag" style="width: 36px; height: 24px;">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

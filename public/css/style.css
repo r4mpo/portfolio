@@ -1738,6 +1738,10 @@ ul.navbar-nav>li.header-get-a-quote:hover>a:after {
     flex: 0 0 33.3333%;
     display: flex;
   }
+  .linkSetLang img {
+    width: 75px !important;
+    height: 45px !important;
+  }
 }
 
 .projetos-row .latest-post {
